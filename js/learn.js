@@ -30,6 +30,9 @@ console.log(buying("apple", 2, 5)); // Output: You bought 5 apple(s) for a total
 console.log(buying("banana", 1, 10)); // Output: You bought 10 banana(s) for a total of $10.    
 console.log(buying("orange", 3, 4)); // Output: You bought 4 orange(s) for a total of $12.
 console.log("-------------------------");
-console.log("Total cost: $" + total); // Output: Total cost: $10
+console.log("Total : $" + total); // Output: Total cost: $10
 
+console.log("tax -", findTax(total, 10)); // Output: tax 1");
+console.log("-------------------------");
 
+console.log("Total cash"+" - "+(total + findTax(total, 10))); // Output: Total cost: $11
