@@ -162,3 +162,27 @@ console.table(MgMgAndFriends); // Myanmar Book
 console.log(MgMgAndFriends.length); 
 // console.log(MgMgAndFriends[0].bag); // ["Myanmar Book", "English Book", "Biology Book"]
 // console.log(MgMgAndFriends[1]);
+
+function triangle(){
+  console.log("*");
+  console.log("**");
+  console.log("***");
+  console.log("****");
+  console.log("*****");
+  return "Hello World"; 
+}
+console.log(triangle()); // Hello World
+
+function area(width=0, height=0){
+  console.log(width);
+  console.log(height);
+  // console.log(width * height);
+  let area = width * height;
+  return area;
+}
+
+console.log(area());
+console.log(area(10,20)); // 200
+console.log(area(5,10)); // 50
+console.log(area(34,54)); // 1836
+
