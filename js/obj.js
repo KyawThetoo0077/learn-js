@@ -87,12 +87,110 @@
 //   console.log("loop statement", i);
 // };
 
-for (let i = 1; i <= 5; i++) {
-  console.log("loop statement", i);
-  // for (let j = 1; j <= 5; j++) {
-  //   console.log("inner loop statement", j);
-  //   if (j === 3) {
-  //     break;
-  //   }
-  // }
+// for (let i = 1; i <= 5; i++) {
+//   console.log("loop statement", i);
+//   for (let j = 1; j <= 5; j++) {
+//     console.log("inner loop statement", j);
+//     if (j === 3) {
+//       break;
+//     }
+//   }
+// };
+
+// array for 10 fruits
+// const fruits = [
+//   "apple",
+//   "banana",
+//   "orange",
+//   "grape",
+//   "kiwi",
+//   "mango",
+//   "pineapple",
+//   "strawberry",
+//   "watermelon",
+//   "blueberry",
+// ];
+
+// // // object for 10 students including name, age, grade and township
+const students = [
+  {
+    name: "John",
+    age: 20,
+    grade: "A",
+    township: "Downtown",
+  },
+  {
+    name: "Jane",
+    age: 22,
+    grade: "B",
+    township: "Uptown",
+  },
+  {
+    name: "Mike",
+    age: 21,
+    grade: "C",
+    township: "Midtown",
+  },
+  {
+    name: "Sara",
+    age: 19,
+    grade: "A",
+    township: "Suburb",
+  },
+  {
+    name: "Tom",
+    age: 23,
+    grade: "B",
+    township: "Downtown",
+  },
+  // {
+  //   name: "Emma",
+  //   age: 20,
+  //   grade: "C",
+  //   township: "Uptown",
+  // },
+  // {
+  //   name: "Liam",
+  //   age: 22,
+  //   grade: "A",
+  //   township: "Midtown",
+  // },
+  // {
+  //   name: "Olivia",
+  //   age: 21,
+  //   grade: "B",
+  //   township: "Suburb",
+  // },
+  // {
+  //   name: "Noah",
+  //   age: 19,
+  //   grade: "C",
+  //   township: "Downtown",
+  // },
+  // {
+  //   name: "Ava",
+  //   age: 23,
+  //   grade: "A",
+  //   township: "Uptown",
+  // },
+];
+
+// for (let i of fruits){
+//     console.log(i);
+// };
+
+// for (let i in fruits){
+//     console.log(i, fruits[ i ]);
+// };
+// for (let i = 0; i < fruits.length; i++) {  
+//     console.log(fruits[i]);
+// };
+
+for (let student of students) {
+  // console.log(
+  //   `Name: ${student.name}, Age: ${student.age}, Grade: ${student.grade}, Township: ${student.township}`
+  // );
+  for (let key of students) {
+    console.log(key,students[key]);
+  }
 }
