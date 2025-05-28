@@ -305,7 +305,7 @@ const product = [
 //             oddArr.push(el);
 //         }
 //     }
-//     return {odd: oddArr, even: evenArr};
+//     return {oddArr, evenArr};
 // };
 // console.log(spratOddEven(points));
 // console.log(spratOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9]));
@@ -318,6 +318,18 @@ const product = [
 // };
 
 // console.log(fiveElementsArr);
+
+// const arraySlice = function (arr, startIndex, endIndex) {
+//   const slicedArr = [];
+//   let slicedArrIndex = 0;
+//   let endIndex = endIndex + arr.length;
+//   for (let i = startIndex; i < endIndex; i++) {
+//     if (i >= arr.length) break;
+//     slicedArr[slicedArrIndex++] = arr[i];
+//   }
+// };
+// console.log(points);
+// console.log(arraySlice(points, 2, 5));
 
 // Problems ( Tasks )
 // 1. point စုစုပေါင်း
