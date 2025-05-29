@@ -23,7 +23,7 @@
 //   break: function () {
 //     console.log(`Stopping the ${this.year} ${this.make} ${this.model}`);
 //   },
-// }; 
+// };
 // console.log(bike.start());
 // console.log(bike.break());
 
@@ -175,3 +175,147 @@
 // console.log(objA); // A
 // const objB = new B();
 // console.log(objB); // B
+
+// class free {
+//   repo= "Unlimited";
+//   storage = "500MB";
+//   push() {
+//     console.log("Free plan push");
+//   }
+// }
+// class team extends free {
+//     codeSpace = "true";
+// }
+
+// class enterPrise extends team{
+//     security = "true";
+//     support = "true";
+// }
+
+// const freePlan = new free();
+// const teamPlan = new team();
+// const enterPrisePlan = new enterPrise();
+// console.log(freePlan); // free plan
+// console.log(teamPlan); // team plan 
+// console.log(enterPrisePlan); // enterPrise plan
+
+// getters and setters methods
+// class bankAccount {
+//   constructor(accountNumber, balance) {
+//     this.accountNumber = accountNumber;
+//     this._balance = balance; // Using underscore to indicate private property
+//   }
+
+//   get balance() {
+//     return this._balance;
+//   }
+
+//   set balance(amount) {
+//     if (amount < 0) {
+//       console.log("Balance cannot be negative.");
+//     } else {
+//       this._balance = amount;
+//     }
+//   }
+
+//   deposit(amount) {
+//     if (amount > 0) {
+//       this._balance += amount;
+//       console.log(`Deposited: $${amount}. New balance: $${this._balance}`);
+//     } else {
+//       console.log("Deposit amount must be positive.");
+//     }
+//   }
+
+//   withdraw(amount) {
+//     if (amount > 0 && amount <= this._balance) {
+//       this._balance -= amount;
+//       console.log(`Withdrew: $${amount}. New balance: $${this._balance}`);
+//     } else {
+//       console.log("Insufficient funds or invalid withdrawal amount.");
+//     }
+//   }
+// }
+// const myAccount = new bankAccount("123456789", 1000);
+// console.log(myAccount);
+// myAccount.deposit(500); // Deposited: $500. New balance: $1500
+// myAccount.withdraw(200); // Withdrew: $200. New balance: $1300
+// console.log(myAccount.balance); // 1300
+// myAccount.balance = 2000; // Setting balance using setter
+// console.log(myAccount.balance); // 2000
+
+// class bankAccount{
+//     #money = 0;
+//     transition(massage){
+//         console.log(massage);
+//     }
+
+//     checkBalance(){
+//         this.transition(`Your current balance is $${this.#money} MMK`);
+//         return this.#money;
+//     }
+//     deposit(amount){
+//         if(amount > 0){
+//             this.#money += amount;
+//             this.transition(`You have deposited $${amount} MMK`);
+//         } else {
+//             this.transition("Deposit amount must be positive.");
+//         }
+//     }
+//     withdraw(amount){
+//         if(amount > 0 && amount <= this.#money){
+//             this.#money -= amount;
+//             this.transition(`You have withdrawn $${amount} MMK`);
+//         } else {
+//             this.transition("Insufficient funds or invalid withdrawal amount.");
+//         }
+//     }
+//     transfer(amount, recipientAccount){
+//         if(amount > 0 && amount <= this.#money){
+//             this.#money -= amount;
+//             recipientAccount.deposit(amount);
+//             this.transition(`You have transferred $${amount} MMK to the recipient account`);
+//         } else {
+//             this.transition("Insufficient funds or invalid transfer amount.");
+//         }
+//     }
+//     get balance() {
+//         return this.#money;
+//     }
+//     set balance(amount) {
+//         if (amount < 0) {
+//             this.transition("Balance cannot be negative.");
+//         } else {
+//             this.#money = amount;
+//         }
+//     }
+//     getMoney() {
+//         return this.#money;
+//     }
+// };
+// const myAccount = new bankAccount();
+// console.log(myAccount);
+// myAccount.deposit(1000); // You have deposited $1000 MMK
+// myAccount.withdraw(500); // You have withdrawn $500 MMK
+// console.log(myAccount.checkBalance()); // Your current balance is $500 MMK  
+// myAccount.transfer(200, new bankAccount()); // You have transferred $200 MMK to the recipient account
+// console.log(myAccount.checkBalance()); // Your current balance is $300 MMK
+// myAccount.balance = 1000; // Setting balance using setter
+// console.log(myAccount.checkBalance()); // Your current balance is $1000 MMK
+// myAccount.deposit(500); // You have deposited $500 MMK
+// console.log(myAccount.getMoney()); // 1500
+// myAccount.withdraw(2000); // Insufficient funds or invalid withdrawal amount.
+// console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
+// myAccount.balance = -100; // Balance cannot be negative.
+// console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
+// myAccount.deposit(-500); // Deposit amount must be positive.
+
+// console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
+// myAccount.withdraw(1500); // You have withdrawn $1500 MMK
+// console.log(myAccount.checkBalance()); // Your current balance is $0 MMK
+// myAccount.transfer(100, new bankAccount()); // Insufficient funds or invalid transfer amount.
+// console.log(myAccount.checkBalance()); // Your current balance is $0 MMK
+// myAccount.balance = 500; // Setting balance using setter
+// console.log(myAccount.checkBalance()); // Your current balance is $500 MMK
+// myAccount.deposit(200); // You have deposited $200 MMK
+// console.log(myAccount.checkBalance()); // Your current balance is $700 MMK
