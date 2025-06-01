@@ -244,78 +244,97 @@
 // myAccount.balance = 2000; // Setting balance using setter
 // console.log(myAccount.balance); // 2000
 
-// class bankAccount{
-//     #money = 0;
-//     transition(massage){
-//         console.log(massage);
-//     }
 
-//     checkBalance(){
-//         this.transition(`Your current balance is $${this.#money} MMK`);
-//         return this.#money;
-//     }
-//     deposit(amount){
-//         if(amount > 0){
-//             this.#money += amount;
-//             this.transition(`You have deposited $${amount} MMK`);
-//         } else {
-//             this.transition("Deposit amount must be positive.");
-//         }
-//     }
-//     withdraw(amount){
-//         if(amount > 0 && amount <= this.#money){
-//             this.#money -= amount;
-//             this.transition(`You have withdrawn $${amount} MMK`);
-//         } else {
-//             this.transition("Insufficient funds or invalid withdrawal amount.");
-//         }
-//     }
-//     transfer(amount, recipientAccount){
-//         if(amount > 0 && amount <= this.#money){
-//             this.#money -= amount;
-//             recipientAccount.deposit(amount);
-//             this.transition(`You have transferred $${amount} MMK to the recipient account`);
-//         } else {
-//             this.transition("Insufficient funds or invalid transfer amount.");
-//         }
-//     }
-//     get balance() {
-//         return this.#money;
-//     }
-//     set balance(amount) {
-//         if (amount < 0) {
-//             this.transition("Balance cannot be negative.");
-//         } else {
-//             this.#money = amount;
-//         }
-//     }
-//     getMoney() {
-//         return this.#money;
-//     }
+
+// class A{
+//     #x = "xxx";
+//     getX() {
+//         return this.#x;
+//     };
+//     setX(value) {
+//         this.#x = value;
+//     };
+    
 // };
-// const myAccount = new bankAccount();
-// console.log(myAccount);
-// myAccount.deposit(1000); // You have deposited $1000 MMK
-// myAccount.withdraw(500); // You have withdrawn $500 MMK
-// console.log(myAccount.checkBalance()); // Your current balance is $500 MMK  
-// myAccount.transfer(200, new bankAccount()); // You have transferred $200 MMK to the recipient account
-// console.log(myAccount.checkBalance()); // Your current balance is $300 MMK
-// myAccount.balance = 1000; // Setting balance using setter
-// console.log(myAccount.checkBalance()); // Your current balance is $1000 MMK
-// myAccount.deposit(500); // You have deposited $500 MMK
-// console.log(myAccount.getMoney()); // 1500
-// myAccount.withdraw(2000); // Insufficient funds or invalid withdrawal amount.
-// console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
-// myAccount.balance = -100; // Balance cannot be negative.
-// console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
-// myAccount.deposit(-500); // Deposit amount must be positive.
 
-// console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
-// myAccount.withdraw(1500); // You have withdrawn $1500 MMK
-// console.log(myAccount.checkBalance()); // Your current balance is $0 MMK
-// myAccount.transfer(100, new bankAccount()); // Insufficient funds or invalid transfer amount.
-// console.log(myAccount.checkBalance()); // Your current balance is $0 MMK
-// myAccount.balance = 500; // Setting balance using setter
-// console.log(myAccount.checkBalance()); // Your current balance is $500 MMK
-// myAccount.deposit(200); // You have deposited $200 MMK
-// console.log(myAccount.checkBalance()); // Your current balance is $700 MMK
+// const a= new A();
+// console.log(a.getX()); // xxx
+
+// a.setX("new value");
+// console.log(a.getX()); // new value
+
+class bankAccount{
+    #money = 0;
+    transition(massage){
+        console.log(massage);
+    }
+
+    checkBalance(){
+        this.transition(`Your current balance is $${this.#money} MMK`);
+        return this.#money;
+    }
+    deposit(amount){
+        if(amount > 0){
+            this.#money += amount;
+            this.transition(`You have deposited $${amount} MMK`);
+        } else {
+            this.transition("Deposit amount must be positive.");
+        }
+    }
+    withdraw(amount){
+        if(amount > 0 && amount <= this.#money){
+            this.#money -= amount;
+            this.transition(`You have withdrawn $${amount} MMK`);
+        } else {
+            this.transition("Insufficient funds or invalid withdrawal amount.");
+        }
+    }
+    transfer(amount, recipientAccount){
+        if(amount > 0 && amount <= this.#money){
+            this.#money -= amount;
+            recipientAccount.deposit(amount);
+            this.transition(`You have transferred $${amount} MMK to the recipient account`);
+        } else {
+            this.transition("Insufficient funds or invalid transfer amount.");
+        }
+    }
+    get balance() {
+        return this.#money;
+    }
+    set balance(amount) {
+        if (amount < 0) {
+            this.transition("Balance cannot be negative.");
+        } else {
+            this.#money = amount;
+        }
+    }
+    getMoney() {
+        return this.#money;
+    }
+};
+const myAccount = new bankAccount();
+console.log(myAccount);
+myAccount.deposit(1000); // You have deposited $1000 MMK
+myAccount.withdraw(500); // You have withdrawn $500 MMK
+console.log(myAccount.checkBalance()); // Your current balance is $500 MMK  
+myAccount.transfer(200, new bankAccount()); // You have transferred $200 MMK to the recipient account
+console.log(myAccount.checkBalance()); // Your current balance is $300 MMK
+myAccount.balance = 1000; // Setting balance using setter
+console.log(myAccount.checkBalance()); // Your current balance is $1000 MMK
+myAccount.deposit(500); // You have deposited $500 MMK
+console.log(myAccount.getMoney()); // 1500
+myAccount.withdraw(2000); // Insufficient funds or invalid withdrawal amount.
+console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
+myAccount.balance = -100; // Balance cannot be negative.
+console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
+myAccount.deposit(-500); // Deposit amount must be positive.
+
+console.log(myAccount.checkBalance()); // Your current balance is $1500 MMK
+myAccount.withdraw(1500); // You have withdrawn $1500 MMK
+console.log(myAccount.checkBalance()); // Your current balance is $0 MMK
+myAccount.transfer(100, new bankAccount()); // Insufficient funds or invalid transfer amount.
+console.log(myAccount.checkBalance()); // Your current balance is $0 MMK
+myAccount.balance = 500; // Setting balance using setter
+console.log(myAccount.checkBalance()); // Your current balance is $500 MMK
+myAccount.deposit(200); // You have deposited $200 MMK
+console.log(myAccount.checkBalance()); // Your current balance is $700 MMK
